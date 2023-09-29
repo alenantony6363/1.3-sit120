@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alen - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        /* Custom CSS for styling */
+        body {
+            font-family:Lucida Sans, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        #app {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #7fda17;
+            color: #fff;
+            text-align: center;
+            padding: 29px 0;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin: 5;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        nav {
+            background-color: #444747;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        /* Style for icons */
+        .nav-icon {
+            margin-right: 5px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #c52f2f;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>ALEN</h1>
+            <p>Web Developer | Creative Designer</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><router-link to="/about"><i class="fas fa-user nav-icon"></i> About</router-link></li>
+                <li><router-link to="/portfolio"><i class="fas fa-briefcase nav-icon"></i> Portfolio</router-link></li>
+                <li><router-link to="/skills"><i class="fas fa-code nav-icon"></i> Skills</router-link></li>
+                <li><router-link to="/contact"><i class="fas fa-envelope nav-icon"></i> Contact</router-link></li>
+            </ul>
+        </nav>
+
+        <router-view></router-view>
+
+        <footer>
+            <p>&copy; 2023 Alen</p>
+        </footer>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.3/dist/vue-router.js"></script>
+
+    <script>
+        Vue.component('navbar', {
+            template: `
+                <nav>
+                    <ul>
+                        <li><router-link to="/about"><i class="fas fa-user nav-icon"></i> About</router-link></li>
+                        <li><router-link to="/portfolio"><i class="fas fa-briefcase nav-icon"></i> Portfolio</router-link></li>
+                        <li><router-link to="/skills"><i class="fas fa-code nav-icon"></i> Skills</router-link></li>
+                        <li><router-link to="/contact"><i class="fas fa-envelope nav-icon"></i> Contact</router-link></li>
+                    </ul>
+                </nav>
+            `
+        });
+
+        Vue.component('about', {
+            template: `
+                <section>
+                    <h2>About Myself</h2>
+                    <div>
+                        <img src="alen.jpeg" alt="Alen">
+                        <p>Alen here, a dedicated Deakin University IT student. I am in my second semester of my Bachelor of Science in Information Technology. I aspire to create aesthetically beautiful and user-friendly websites with a solid foundation in front-end development and a keen eye for design.</p>
+                        <p>I have a strong passion for coding and a proven track record of developing websites that combine both functionality and aesthetics to deliver exceptional user experiences.</p>
+                        <p>My goal is to continuously improve my skills and stay up-to-date with the latest web development trends and technologies to provide innovative solutions for my clients.</p>
+                        <p>Let's work together to bring your ideas to life!</p>
+                    </div>
+                </section>
+            `
+        });
+
+        Vue.component('portfolio', {
+            template: `
+                <section>
+                    <h2>Portfolio</h2>
+                    <div>
+                        <div>
+                            <h3>Project 1: Task 1.1P - Creating an HTML Page with CSS Styling and GitHub Integration</h3>
+                            <p>"The HTML page I created is a dynamic online shoe store, showcasing essential HTML tags and elements. The header, "Shoe Shop," sets the tone for the virtual shopping experience. The product list section presents two distinct shoe offerings, with enticing images, product titles, prices, and convenient cart addition. The order form segment is user-friendly, with basic input fields and a clear "Submit Order" button. The cohesive integration of inline, internal, and external CSS styles emphasizes design's importance in captivating and retaining customers.
+                        <div>
+                            <h3>Project 2: Task 1.2P - Exploring Responsive Web Design and JavaScript Concepts</h3>
+                            <p>"Responsive web apps use Java and HTML to create user-friendly experiences across devices. Java provides server-side logic, data processing, and user interaction, while HTML and CSS build user interface structure and styling. Responsive design adjusts to screen sizes using media queries and flexible layouts. This synergy allows web apps to function smoothly on desktops, tablets, and smartphones, enhancing accessibility and engagement for diverse audiences."</p>
+                        </div>
+                    </div>
+                </section>
+            `
+        });
+
+        Vue.component('skills', {
+            template: `
+                <section>
+                    <h2>Skills</h2>
+                    <div>
+                        <ul>
+                            <li v-for="skill in skills">{{ skill }}</li>
+                        </ul>
+                    </div>
+                </section>
+            `,
+            data() {
+                return {
+                    skills: [
+                        "*Responsive Web Design",
+                        "*User Interface (UI) Design",
+                        "*Web Development Frameworks",
+                        "*Problem-Solving",
+                        "*HTML5",
+                        "*CSS3",
+                        "*JavaScript",
+                        "*Git",
+                        "*UI/UX Design",
+                    ]
+                };
+            }
+        });
+
+        Vue.component('contact', {
+            template: `
+                <section>
+                    <h2>Contact Me</h2>
+                    <div>
+                        <p>I am open for freelance and collaborative work. Please do not hesitate to contact me!</p>
+                        <input type="text" v-model="userInput" placeholder="Your Message">
+                        
+                        <p v-if="userInput !== ''">You typed: {{ userInput }}</p>
+                        <p v-else>No message entered.</p>
+                        
+                        <button v-if="userInput !== ''" @click="submitMessage"><i class="fas fa-paper-plane"></i> Submit</button>
+                        <p v-if="messageSent">Message sent successfully!</p>
+                        
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:alenantony247@gmail.com">alenantony247@gmail.com</a></li>
+                            <li><i class="fas fa-phone"></i> Phone Number: <a href="tel:+61434749534">+61 0434749534</a></li>
+                            <li><i class="fab fa-github"></i> GitHub: <a href="https://github.com/alenantony6363/1.3-sit120" target="_blank">https://github.com/alenantony6363/1.3-sit120</a></li>
+                        </ul>
+                    </div>
+                </section>
+            `,
+            data() {
+                return {
+                    userInput: '',
+                    messageSent: false
+                };
+            },
+            methods: {
+                submitMessage() {
+                    setTimeout(() => {
+                        this.messageSent = true;
+                    }, 1000);
+                }
+            }
+        });
+
+        const routes = [
+            { path: '/about', component: Vue.component('about') },
+            { path: '/portfolio', component: Vue.component('portfolio') },
+            { path: '/skills', component: Vue.component('skills') },
+            { path: '/contact', component: Vue.component('contact') }
+        ];
+
+        const router = new VueRouter({
+            routes
+        });
+
+        const app = new Vue({
+            el: '#app',
+            router
+        });
+    </script>
+</body>
+</html>
+
